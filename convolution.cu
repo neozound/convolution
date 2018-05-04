@@ -17,14 +17,25 @@ void cpu_conv1D(float *a, float *b, float *c, int size){
 	}
 }
 
-/*
-void cpu_conv2D(float *
-*/
+// scm: size of convolution matrix
+// cm: Convolution matrix
+void cpu_conv2D(float *a, float *c, int m, int n){
+    //cm: Convolution matrix    
+    float *cm;
+    cm = (float **) malloc(3*3*sizeof(float));
+
+    
+}
+
 
 void fillArray(float * m, int size, float v){
 	for (int i = 0; i < size; i++){
 		m[i] = v;
 	}
+}
+
+void fillMatrix(float *m, ){
+
 }
 
 void printArray(float *m, int size){
