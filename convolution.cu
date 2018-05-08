@@ -21,9 +21,12 @@ void cpu_conv1D(float *a, float *b, float *c, int size){
 // cm: Convolution matrix
 void cpu_conv2D(float *a, float *c, int m, int n){
     //cm: Convolution matrix    
-    float *cm;
-    cm = (float **) malloc(3*3*sizeof(float));
+    float * cm = NULL;
+    cm = (float *) malloc(3*3*sizeof(float));
+    
+    fillMatrix(cm, x, y, 2);
 
+    
     
 }
 
@@ -34,8 +37,12 @@ void fillArray(float * m, int size, float v){
 	}
 }
 
-void fillMatrix(float *m, ){
-
+void fillMatrix(float *m, int x, int y, float v){
+    for(int i = 0; i < x, i++){
+        for (int j = 0; j < y; j++) {
+            m[(i*y)+j] = v;
+        }
+    }
 }
 
 void printArray(float *m, int size){
@@ -43,6 +50,14 @@ void printArray(float *m, int size){
         printf("%f ", m[i]);
     }
     printf("\n");
+}
+
+void printMatrix(float *m, int x, int y) {
+    for (int i = 0; i < x; i++) {
+        for (int j = o; j < y; j++) {
+            printf("%f ", m[(i*y)+j]);
+        }
+    }
 }
 
 int main(int argc, char *argv[]){
